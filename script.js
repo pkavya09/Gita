@@ -22,16 +22,20 @@ const engBtn=document.getElementById("eng-btn");
 const telBtn=document.getElementById("tel-btn");
 const hinBtn=document.getElementById("hin-btn");
 const tamilBtn=document.getElementById("tamil-btn")
+const meanBtn=document.getElementById("meaning-btn");
 // Variables
 let currentSloka = 1; // Starting from the first sloka
 const maxSloka = 11; // Total number of slokas
+let Engnum=1;let Telnum=1;let Hinnum=1;let Tamnum=1;let meanNum=1;
 let slokaNum=281;
+let isClicked=false;
 const maxSlokaNum=290;
 
 nextBtn.addEventListener("click",()=>{
    const transRef=ref(database,`/${currentSloka}/sloka`);
    get(transRef).then((snapshot)=>{
       if(snapshot.exists){
+         isClicked=true;
          slokaContainer.innerHTML=snapshot.val();
           slokaDisplay();
       }
@@ -41,52 +45,80 @@ nextBtn.addEventListener("click",()=>{
    })
  })
 engBtn.addEventListener("click",()=>{
-   const transRef=ref(database,`/${currentSloka}/translations/english`);
+  if(isClicked && currentSloka-1==Engnum){
+   const transRef=ref(database,`/${Engnum}/translations/english`);
    get(transRef).then((snapshot)=>{
       if(snapshot.exists){
-         slokaTitle.innerText=slokaNum;
-         slokaContainer.innerHTML=snapshot.val();  
+       slokaContainer.innerHTML=snapshot.val();
+       Engnum++;  
       }
       else{
          console.log("data not found!")
-      }
-   })
+      }})
+
+  }
 })
+
 telBtn.addEventListener("click",()=>{
-   const transRef=ref(database,`/${currentSloka}/translations/telugu`);
-   get(transRef).then((snapshot)=>{
-      if(snapshot.exists){
-         slokaTitle.innerText=slokaNum;
-         slokaContainer.innerHTML=snapshot.val();  
-      }
-      else{
-         console.log("data not found!")
-      }
-   })
+   if(isClicked && currentSloka-1==Telnum){
+      const transRef=ref(database,`/${Telnum}/translations/telugu`);
+      get(transRef).then((snapshot)=>{
+         if(snapshot.exists){
+            slokaContainer.innerHTML=snapshot.val();    
+            Telnum++;
+         }
+         else{
+            console.log("data not found!")
+         }
+        
+      })
+   }
+ 
 })
 hinBtn.addEventListener("click",()=>{
-   const transRef=ref(database,`/${currentSloka}/translations/hindi`);
+   if(isClicked && currentSloka-1==Hinnum){
+   const transRef=ref(database,`/${Hinnum}/translations/hindi`);
    get(transRef).then((snapshot)=>{
       if(snapshot.exists){
-         slokaTitle.innerText=slokaNum;
-         slokaContainer.innerHTML=snapshot.val();     
+         slokaContainer.innerHTML=snapshot.val();  
+         Hinnum++;
       }
       else{
          console.log("data not found!")
       }
+      
    })
+}
 })
 tamilBtn.addEventListener("click",()=>{
-   const transRef=ref(database,`/${currentSloka}/translations/tamil`);
+   if(isClicked && currentSloka-1==Tamnum){
+   const transRef=ref(database,`/${Tamnum}/translations/tamil`);
    get(transRef).then((snapshot)=>{
       if(snapshot.exists){
-         slokaTitle.innerText=slokaNum;
-         slokaContainer.innerHTML=snapshot.val();  
+        slokaContainer.innerHTML=snapshot.val();  
+        Tamnum++;
       }
       else{
          console.log("data not found!")
       }
+ 
    })
+}
+})
+meanBtn.addEventListener("click",()=>{
+   if(isClicked && currentSloka-1==meanNum){
+   const transRef=ref(database,`/${meanNum}/meaning`);
+   get(transRef).then((snapshot)=>{
+      if(snapshot.exists){
+        slokaContainer.innerHTML=snapshot.val();  
+        meanNum++;
+      }
+      else{
+         console.log("data not found!")
+      }
+ 
+   })
+}
 })
 function slokaDisplay(){
    if(currentSloka===maxSloka){

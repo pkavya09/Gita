@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 id="datacheck">Page works!</h1>
+<button onClick="changeText()">CLICK ME</button>
+</body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getDatabase,ref,get} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyB2rqIPzwKpi_F9wZblykXyArZaDz_mk6s",
+      authDomain: "gita-269f8.firebaseapp.com",
+      databaseURL: "https://gita-269f8-default-rtdb.firebaseio.com",
+      projectId: "gita-269f8",
+      storageBucket: "gita-269f8.firebasestorage.app",
+      messagingSenderId: "506820047158",
+      appId: "1:506820047158:web:7927eae4abbe51a606c397",
+      measurementId: "G-47D5M4PPP3"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database=getDatabase(app);
+    console.log(app)
+    window.changeText=function (){
+        document.getElementById("datacheck").innerHTML="something"
+    }
+  </script>
+</html>

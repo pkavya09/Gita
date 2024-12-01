@@ -1,0 +1,41 @@
+.card-box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .team-card {
+    width: 300px; /* Fixed width to keep cards aligned */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  .team-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  .card-body h5, .card-body h4 {
+    font-weight: bold;
+    color: #333;
+  }
+  .card-body p {
+    color: #666;
+  }
+ 
+  .footerTeam {
+    background-color: #c8979799;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    
+    margin-top: 50px;
+  }
+  .footerTeam h4, .footerTeam p {
+    margin: 5px 0;
+  }

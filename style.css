@@ -1,6 +1,16 @@
 *{
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:'Poppins', sans-serif;
+  
 }
+body {
+  background-image: url(/bg4\ opo\ 25.jpg);
+   background-size:cover;
+  background-position: center; 
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  /* opacity: 0.4;  */
+} 
 
 .navbar {
     background: linear-gradient(to right, #686eda, #8f94fb);
@@ -12,14 +22,15 @@
   
   .navbar-links a {
     font-size: 18px;
-    color: #fcb94d;
+    color:rgb(76, 0, 139);
     text-decoration: none;
     font-weight: 500;
   }
   
 .navbar-links a:hover {
-    color: #08343a;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+    color: #e93e2b;
+    text-decoration: underline;
+  
   }
   
   /* Sloka Section Styling */
@@ -29,13 +40,13 @@
   
   #sloka-text {
     border: 2px solid #4e54c8;
-    background-color: #f3f4f6;
+    /* background-color: #f3f4f6; */
     font-size: 24px;
     font-family: 'Georgia', serif;
   }
   
   #sloka-text:hover {
-    background-color: #e0e7ff;
+    background-color: #8fa1de27;
     transition: background-color 0.3s ease-in-out;
   }
   
@@ -71,3 +82,11 @@
       width: 100%;
     }
   }
+.footer{
+  margin-top:80px;
+  position: sticky;
+  bottom:0;
+  background-color: #f8f9fa;
+   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
