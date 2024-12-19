@@ -6,6 +6,10 @@
   <title>Bhagavad Gita</title>
   <link rel="stylesheet" href="./style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+ 
+
+</style>
 </head>
 <body>
   <div class="body-main" >
@@ -37,43 +41,97 @@
     <div class="row">
       <h1 class="text-center fw-semibold mb-4">श्रीमद् भगवद्गीता</h1>
      
-      <p class="text-center m-2 p-2" style="color:darkblue;font-size: 20px;">
+      <p class="text-center m-2 p-2" style="color:rgb(8, 55, 5);font-size: 20px;">
         Immerse yourself in the timeless wisdom of Chapter 7, Verses 13 to 22, where Lord Krishna reveals the secrets of material nature, the strength of devotion, and the journey toward divine understanding.
       </p>
-      <div class="col-md-8 offset-md-2" >
-        <div class="  p-4  rounded-3" style="border:2px solid rgb(13, 39, 3)">
-          <h2 class="text-muted text-center">7th Chapter - <b id="sloka-title">281 to 290</b></h2>
+           <!-- Scrollable Button Bar -->
+        <div class="scrollable-btn-bar" id="slokaList">
+         <button class="scroll-btn btn"id="281" data-sloka-id="281" >Verse 281</button>
+          <button class="scroll-btn btn"id="282" data-sloka-id="282" >Verse 282</button>
+          <button class="scroll-btn btn"id="283" data-sloka-id="283" >Verse 283</button>
+          <button class="scroll-btn btn"id="284" data-sloka-id="284" >Verse 284</button>
+          <button class="scroll-btn btn"id="285" data-sloka-id="285" >Verse 285</button>
+          <button class="scroll-btn btn"id="286" data-sloka-id="286" >Verse 286</button>
+          <button class="scroll-btn btn"id="287" data-sloka-id="287" >Verse 287</button>
+          <button class="scroll-btn btn"id="288" data-sloka-id="288" >Verse 288</button>
+          <button class="scroll-btn btn"id="289" data-sloka-id="289" >Verse 289</button>
+          <button class="scroll-btn btn"id="290" data-sloka-id="290" >Verse 290</button> 
+        </div>
+      </div>
+    </div>
+<div class=" main-body">
+      <div class="col-md-8 offset-md-2">
+        <div class="  p-4  rounded-3">
+          <h2 class="text-muted text-center"> <b id="sloka-title"></b></h2>
           <div id="sloka-text" class="sloka p-3 my-3 text-center rounded" style="cursor:pointer;">
             Click to start
             <br>
           </div>
-          <br>
-          <div class="text-center">
-            <button id="next-btn" class="btn btn-outline-primary px-5 py-2 rounded-pill">Next</button>
-            <br>
-            <button id="meaning-btn" class="btn btn-outline-primary px-5 py-2 rounded-5 mt-2">Meaning</button>
-          </div>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Select Language
-            </button>
-            <ul class="dropdown-menu">
-           <li><button class="btn btn-outline-dark m-2 dropdown-item " id="eng-btn" style="width: 20% ">English</button></li>
-          <li><button class="btn btn-outline-dark m-2 dropdown-item" id="tel-btn" style="width: 20%">Telugu</button></li>
-          <li><button class="btn btn-outline-dark m-2 dropdown-item" id="hin-btn" style="width: 20%">Hindi</button></li>
-          <li><button class="btn btn-outline-dark m-2 dropdown-item" id="tamil-btn" style="width: 20%">Tamil</button></li>
-       </ul>
-          </div>
-         <div class="m-2 d-flex flex-wrap" style="justify-content: space-around;justify-content: space-evenly;">
-           </div>
+          <br> 
+        <div id="audioList"></div>
+        <div class="text-center">
+          <button id="next-btn" class="btn px-5 py-2 rounded-pill">Next</button>
         </div>
+          <div class="container mt-5">
+ <div class="row">
+                
+   <div class="col-2">
+       <div class="dropdown">
+             <button class="btn btn-success dropdown-toggle m-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Translate 
+            </button>
+<ul class="dropdown-menu">
+    <li><button class="btn  m-2 dropdown-item" id="eng-btn" style="width: 100%">English</button></li>
+    <li><button class="btn  m-2 dropdown-item" id="tel-btn">Telugu</button></li>
+   <li><button class="btn  m-2 dropdown-item" id="hin-btn">Hindi</button></li>
+  <li><button class="btn  m-2 dropdown-item" id="tamil-btn">Tamil</button></li>
+ </ul>
+       </div>
       </div>
+     
+ <div class="col-2" >
+      <div class="dropdown">
+          <button class="btn btn-success dropdown-toggle m-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Meaning
+              </button>
+           <ul class="dropdown-menu">
+             <li><button class="btn btn-success m-2 dropdown-item" id="meaning-eng-btn">English</button></li>
+            <li><button class="btn btn-success m-2 dropdown-item" id="meaning-tel-btn" >Telugu</button></li>
+            <li><button class="btn btn-success m-2 dropdown-item" id="meaning-hin-btn">Hindi</button></li>
+           <li><button class="btn btn-success m-2 dropdown-item" id="meaning-tam-btn">Tamil</button></li>
+        </ul>
+      </div>
+      </div>   
+<div id="sloka-container" class="col-4">
+        <img id="sloka-image" src="" alt="Sloka Image" style="display: none; max-width: 300px; margin:20px">
+      </div>
+      <button id="get-image-btn" class="btn btn-success">Get Image</button>
     </div>
- 
-</div>
 
+  </div>  
+</div>
+</div>
+</div>
+</div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./script.js" type="module"></script>
 </body>
 </div>
 </html>
+<script>
+  // Array of images for Slokas
+const slokaImages = [
+'images/281.jpg', 
+'images/282.jpg',
+'images/283.jpg',
+'images/284.jpg',
+'images/285.jpg',
+'images/286.webp',
+'images/287.jpg',
+'images/288.webp',
+'images/289.jpg',
+'images/290.jpg',
+];
+
+
+</script>

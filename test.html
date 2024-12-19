@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sloka-container {
+  text-align: center;
+  margin: 20px;
+}
+
+#get-image-btn {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#get-image-btn:hover {
+  background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div id="sloka-container">
+        <h3 id="sloka-title">Sloka 281</h3>
+        <img id="sloka-image" src="" alt="Sloka Image" style="display: none; max-width: 300px; margin-top: 10px;">
+      </div>
+      <button id="get-image-btn">Get Image</button>
+    </div>
+</body>
+</html>
+<script>
+    // Array of images for Slokas
+const slokaImages = [
+  'images/281.jpg', // Replace with your actual image paths
+  'images/282.jpg',
+  'images/283.jpg',
+  'images/284.jpg',
+  'images/285.jpg',
+  'images/286.jpg',
+  'images/287.jpg',
+  'images/288.jpg',
+  'images/289.jpg',
+  'images/290.jpg',
+];
+
+let currentSlokaIndex = 0; // Start with the first sloka
+
+document.getElementById('get-image-btn').addEventListener('click', () => {
+  // Update image source
+  const slokaImage = document.getElementById('sloka-image');
+  slokaImage.src = slokaImages[currentSlokaIndex];
+  slokaImage.style.display = 'block';
+
+  // Update sloka title
+  document.getElementById('sloka-title').textContent = `Sloka ${281 + currentSlokaIndex}`;
+
+  // Increment the index, loop back to the first image if at the end
+  currentSlokaIndex = (currentSlokaIndex + 1) % slokaImages.length;
+});
+
+</script>
